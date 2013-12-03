@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Author: Sumit Goel <sumit.goel@outlook.com>
+# Author: Sumit Goel
 #
 # Note: Please add all the filenames with full path
 # as an arguments to this script. This script is
