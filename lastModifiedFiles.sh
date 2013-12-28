@@ -2,7 +2,7 @@
 #
 # Author: Sumit Goel
 # Email: sumit.goel@outlook.com
-# Description: 
+# Description: http://goo.gl/Rka9Gs
 #
 
 SHORT_HOSTNAME=`hostname -s`
