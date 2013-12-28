@@ -3,8 +3,8 @@
 __author__ = "Sumit Goel"
 __email__ = "sumit.goel@outlook.com"
 
-# Description: The script will read the IP then print
-# the ping status and hostname at the console.
+# Description: http://goo.gl/Ia8qzz
+#
 
 import sys
 try:
