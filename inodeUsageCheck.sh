@@ -2,7 +2,7 @@
 #
 # Author: Sumit Goel
 # Email: sumit.goel@outlook.com
-# Description: 
+# Description: http://goo.gl/q8r6Lk
 #
 
 # Safely obtain short hostname
