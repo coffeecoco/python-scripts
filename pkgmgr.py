@@ -1,6 +1,6 @@
 #!/usr/bin/env python -tt
 
-# Author: Sumit Goel <sumit.goel@salesforce.com>
+# Author: Sumit Goel
 # Description: A program to automate the process of adding and removing
 #    interdependent software packages.
 
