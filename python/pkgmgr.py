@@ -29,26 +29,26 @@ def user_input():
     # loop to user input
     for user_input in iter(raw_input, 'END'):
         # split the command into a list
-	user_input = user_input.split()
+        user_input = user_input.split()
         # if user input is blank
         if not user_input:
             continue
-	# else if it is the first entry and user command == non_repeat_input
-	elif not all_input and user_input[0] == non_repeat_input:
-	    all_input.append(user_input)
-	    dep_input.append(user_input)
-	# else if all entries so far are == non_repeat_input 
-	# and current command == non_repeat_input
-	elif user_input[0] == non_repeat_input and all(command[0] == \
-		non_repeat_input for command in all_input):
-	    all_input.append(user_input)
-	    dep_input.append(user_input)
-	# else if it is one of the valid commands
-	elif all_input and user_input[0] in commands:
-	    all_input.append(user_input)
-	# else user input is not a valid command
-	else:
-	    print '>>> INVALID COMMAND'
+        # else if it is the first entry and user command == non_repeat_input
+        elif not all_input and user_input[0] == non_repeat_input:
+            all_input.append(user_input)
+            dep_input.append(user_input)
+        # else if all entries so far are == non_repeat_input 
+        # and current command == non_repeat_input
+        elif user_input[0] == non_repeat_input and all(command[0] == \
+                non_repeat_input for command in all_input):
+            all_input.append(user_input)
+            dep_input.append(user_input)
+        # else if it is one of the valid commands
+        elif all_input and user_input[0] in commands:
+            all_input.append(user_input)
+        # else user input is not a valid command
+        else:
+            print '>>> INVALID COMMAND'
     return (all_input, dep_input)
 
 
@@ -180,30 +180,30 @@ def input_processing(all_input, dep_input):
     """
     all_input.append(['END'])
     for row in all_input:
-	# print the user input DEPEND command
-	if row[0] == 'DEPEND':
-	    print ' '.join(row)
-	# process the package installation
-	if row[0] == 'INSTALL':
-	    print ' '.join(row)
-	    install_package(row[1], dep_input)
-	# process the package removal
-	if row[0] == 'REMOVE':
-	    print ' '.join(row)
+        # print the user input DEPEND command
+        if row[0] == 'DEPEND':
+            print ' '.join(row)
+        # process the package installation
+        if row[0] == 'INSTALL':
+            print ' '.join(row)
+            install_package(row[1], dep_input)
+        # process the package removal
+        if row[0] == 'REMOVE':
+            print ' '.join(row)
             remove_package(row[1], dep_input)
-	# print the list of currently installed packages
-	if row[0] == 'LIST':
-	    print ' '.join(row)
+        # print the list of currently installed packages
+        if row[0] == 'LIST':
+            print ' '.join(row)
             for pkg in installed_packages:
                 print '\t%s' % pkg
-	# print the input submission END command
-	if row[0] == 'END':
-	    print ' '.join(row)
-	else:
-	    continue
+        # print the input submission END command
+        if row[0] == 'END':
+            print ' '.join(row)
+        else:
+            continue
 
 
-# script output header
+# program output header
 print '''=====================================================
 Hi %s,
 

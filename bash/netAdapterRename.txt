@@ -1,0 +1,17 @@
+#!/bin/bash
+ifconfig eth0 > /dev/null 2>&1
+if [ $? -ne 0 ] ; then
+        mv /etc/udev/rules.d/70-persistent-net.rules /root/
+        service network stop
+        ifconfig eth1 down
+        sed '/HWADDR/d' /etc/sysconfig/network-scripts/ifcfg-eth0
+        udevadm trigger
+        udevadm control --reload-rules
+        sed -i 's/eth1/eth0/g' /etc/udev/rules.d/70-persistent-net.rules
+        udevadm trigger
+        udevadm control --reload-rules
+#       MACADDRESS=`grep SUBSYSTEM /etc/udev/rules.d/70-persistent-net.rules | awk '{print $4}' | cut -d'"' -f2`
+#       sed '/^HWADDR/d' /etc/sysconfig/network-scripts/ifcfg-eth0
+#       echo echo "HWADDR=\"$MACADDRESS\"" >> /etc/sysconfig/network-scripts/ifcfg-eth0
+        service network start
+fi
