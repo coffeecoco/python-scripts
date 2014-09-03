@@ -1,6 +1,6 @@
-# ignore python compiled code, so called byte code files
-# ignore python optimized bytecode files
-# ignore python dynamic link libraries (DLL)s
+# ignore python compiled code .pyc (so called byte code)
+# and optimized byte code .pyo
+# and dynamic link libraries .pyd
 *.py[cod]
 
 # ignore eclipse project files
